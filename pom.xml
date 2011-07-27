@@ -31,7 +31,7 @@
   <scm>
     <url>https://github.com/codeswarm/lipsum</url>
     <connection>scm:git:git://github.com/codeswarm/lipsum.git</connection>
-    <developerConnection>scm:git:ssh://git@github.com:codeswarm/lipsum.git</developerConnection>
+    <developerConnection>scm:git:ssh://git@github.com/codeswarm/lipsum.git</developerConnection>
   </scm>
 
   <developers>
