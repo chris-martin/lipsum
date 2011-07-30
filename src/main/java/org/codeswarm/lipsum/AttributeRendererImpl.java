@@ -1,12 +1,14 @@
 package org.codeswarm.lipsum;
 
-import java.util.HashMap;
+import com.google.common.collect.Maps;
+
 import java.util.Locale;
 import java.util.Map;
 
 class AttributeRendererImpl implements Lipsum.AttributeRenderer {
 
-  private final Map<String, Lipsum.ParagraphGenerator> registeredLipsums = new HashMap<String, Lipsum.ParagraphGenerator>();
+  private final Map<String, Lipsum.ParagraphGenerator> registeredLipsums =
+    Maps.newHashMapWithExpectedSize(4);
 
   @Override
   public void register(String format, Lipsum.ParagraphGenerator paragraphGenerator) {
