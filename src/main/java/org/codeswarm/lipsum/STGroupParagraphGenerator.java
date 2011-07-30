@@ -4,7 +4,7 @@ import org.stringtemplate.v4.ST;
 import org.stringtemplate.v4.STGroup;
 
 /**
- * A {@link org.codeswarm.lipsum.Lipsum.ParagraphGenerator} implementation backed by an {@link STGroup}.
+ * A {@link Lipsum.ParagraphGenerator} implementation backed by an {@link STGroup}.
  */
 class STGroupParagraphGenerator implements Lipsum.ParagraphGenerator {
 
