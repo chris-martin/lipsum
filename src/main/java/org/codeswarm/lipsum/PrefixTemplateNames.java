@@ -1,5 +1,7 @@
 package org.codeswarm.lipsum;
 
+import com.google.common.base.Preconditions;
+
 class PrefixTemplateNames implements STGroupParagraphGenerator.TemplateNames {
 
   private final String prefix;
@@ -7,8 +9,8 @@ class PrefixTemplateNames implements STGroupParagraphGenerator.TemplateNames {
   private final int maxIndex;
 
   PrefixTemplateNames(String prefix, int minIndex, int maxIndex) {
-    if (minIndex < 0) throw new IllegalArgumentException("minIndex must be >= 0");
-    if (minIndex > maxIndex) throw new IllegalArgumentException("maxIndex >= minIndex");
+    Preconditions.checkArgument(minIndex >= 0);
+    Preconditions.checkArgument(minIndex <= maxIndex);
     this.prefix = prefix;
     this.minIndex = minIndex;
     this.maxIndex = maxIndex;
