@@ -5,6 +5,34 @@ import org.stringtemplate.v4.STGroupFile;
 
 import java.util.List;
 
+/**
+
+<p>Utility methods for providers of filler text (lorem ipsum
+and the like).</p>
+
+<p>To select paragraph 42 of Lorem Ipsum:</p>
+
+<blockquote><pre>{@code
+String paragraph = Lipsum.lorem().paragraph(42);
+}</pre></blockquote>
+
+<p>The generators provided by this class are all deterministic.
+But if you need randomness, it's easy to do it yourself:</p>
+
+<blockquote><pre>{@code
+Lipsum.lorem().paragraph(new Random().nextLong());
+}</pre></blockquote>
+
+<p>If a paragraph generator is backed by
+<a href="http://www.stringtemplate.org/">StringTemplate</a>,
+its group file may also be referenced directly:</p>
+
+<blockquote><pre>{@code
+import "org/codeswarm/lipsum/lorem.stg"
+paragraph() ::= "<LoremIpsum42()>"
+}</pre></blockquote>
+
+*/
 public final class Lipsum {
 
   private Lipsum() { }
@@ -66,7 +94,7 @@ public final class Lipsum {
    *
    * This content can also be used in StringTemplate be importing
    * {@code org/codeswarm/lipsum/lorizzle.stg} and invoking templates named
-   * {@code BaconIpsumX}, where {@code X} is an integer between 1 and 150.
+   * {@code LorizzleIpsumX}, where {@code X} is an integer between 1 and 150.
    */
   public static ParagraphGenerator lorizzle() {
     return _stParagraphGenerator("lorizzle", "LorizzleIpsum", 150);
