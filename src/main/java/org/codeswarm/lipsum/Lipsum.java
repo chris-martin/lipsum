@@ -1,9 +1,11 @@
 package org.codeswarm.lipsum;
 
+import com.google.common.collect.MapMaker;
 import org.stringtemplate.v4.STGroup;
 import org.stringtemplate.v4.STGroupFile;
 
 import java.util.List;
+import java.util.Map;
 
 /**
 
@@ -128,10 +130,20 @@ public final class Lipsum {
     return stParagraphGenerator(stg, "lipsum", maxIndex);
   }
 
+  /** Soft cache of {@link STGroupParagraphGenerator}s. */
+  private static final Map<String, ParagraphGenerator> STG_CACHE =
+    new MapMaker().softValues().initialCapacity(3).makeMap();
+
   private static ParagraphGenerator _stParagraphGenerator(
       String name, String prefix, int maxIndex) {
-    STGroup stg = new STGroupFile("org/codeswarm/lipsum/" + name + ".stg");
-    return stParagraphGenerator(stg, prefix, maxIndex);
+
+    ParagraphGenerator paragraphGenerator = STG_CACHE.get(name);
+    if (paragraphGenerator == null) {
+      STGroup stg = new STGroupFile("org/codeswarm/lipsum/" + name + ".stg");
+      paragraphGenerator = stParagraphGenerator(stg, prefix, maxIndex);
+      STG_CACHE.put(name, paragraphGenerator);
+    }
+    return paragraphGenerator;
   }
 
   static int remainder(long numerator, int denominator) {
