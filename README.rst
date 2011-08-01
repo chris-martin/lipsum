@@ -20,5 +20,5 @@ Releases
 
 * `1.0`_
 
-.. _1.0 : http://search.maven.org/#artifactdetails%7Corg.codeswarm%7Clipsum%7C1.0%7Cjar
+.. _1.0 : http://mvnrepository.com/artifact/org.codeswarm/lipsum/1.0
 
