@@ -1,9 +1,0 @@
-import "org/codeswarm/lipsum/bacon.stg"
-import "org/codeswarm/lipsum/lorem.stg"
-import "org/codeswarm/lipsum/lorizzle.stg"
-
-InsightfulProse() ::= <<
-<LoremIpsum1()>
-<BaconIpsum42()>
-<LorizzleIpsum100()>
->>
