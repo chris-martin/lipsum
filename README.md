@@ -28,12 +28,12 @@ The latest version is 2.0.
 Releases
 --------
 
-* 2.0
-** Rename package from org.codeswarm.lipsum to org.codeswarm.lipsum2
-** Remove StringTemplate support
-** Remove dependency on Guava
-** Bugfix: ArrayIndexOutOfBoundsException when invoking #paragraph(long) with a negative argument
+**2.0**
+* Rename package from org.codeswarm.lipsum to org.codeswarm.lipsum2
+* Remove StringTemplate support
+* Remove dependency on Guava
+* Bugfix: ArrayIndexOutOfBoundsException when invoking #paragraph(long) with a negative argument
 
-* 1.0
-** Lipsum, Bacon Ipsum, and Lorizzle
-** List and StringTemplate-based generators
+**1.0**
+* Lipsum, Bacon Ipsum, and Lorizzle
+* List and StringTemplate-based generators
