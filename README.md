@@ -8,7 +8,9 @@ Example Usage
 
 Randomly select a Lorem Ipsum paragraph::
 
+```java
  String paragraph = Lipsum.lorem().paragraph(new Random().nextLong());
+```
 
 Download
 --------
